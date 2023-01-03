@@ -26,7 +26,7 @@ elif [ "$1" == "help" ]; then
   echo $'\n[+]Simple IP Copy !!Must have xclip\n\nSpecify the next parameters (example "./hackthebox.sh c"):\nFor setting IP just add your input "./hackthebox.sh input"\nTo copy use "c"\nTo remove storage file use "r"\nTo view defined file path "s"'
 
 elif [ $1 ]; then
-  echo -n $1 > $FILE && echo $'\n'"[+] $1 saved"
+  echo -n $1 > $FILE && echo -n $1 | xclip -sel clip && echo $'\n'"[+] $1 saved and copied"
 
 else
   echo $'\n[-]Use "help" parameter'
